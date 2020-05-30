@@ -1,0 +1,40 @@
+{% extends "blog/base.html" %}
+
+{% load static %}
+
+{% block Livetryon%}
+
+<div class="container">
+   
+    
+    
+
+</div>
+    <div class="row ">
+     
+{% for postglasses in addglasses %} 
+        <div class="col-md-3  " style="margin-bottom:80px">
+        
+            <a >
+            <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+            <img class="img-thumbnails imgresponsive" class="col-lg-3" 
+                src='/media/{{postglasses.image}}'
+                alt="Another alt text">
+                
+            </a>
+        <br><br>
+           
+        <div><label name="name"><b>Name: {{postglasses.Name}} </b></label></div>
+            <div ><p > <b>Price:</b> <b class="pricebg" > {{postglasses.Price}} </b></p></div><hr>
+            <button class="  btn btn-danger btn-sm " type="submit">Try on</button>
+            <button onclick="window.location.href = '#'" class=" btn btn-unique btn-sm ">Buy Now</button>        
+         </div> <!--end item-->
+        </form>
+         {% endfor %}    
+       
+    </div> 
+
+
+
+</div>
+{% endblock Livetryon %}
